@@ -1,0 +1,32 @@
+CATATAN Membangun Interactive File Explorer via CMD
+TUNDA_BAWAAN 80
+TUNDA 1000
+
+WIN r
+TUNDA 500
+TEKS_BARIS cmd
+TUNDA 1000
+
+CATATAN Membuat file batch menu secara bertahap
+TEKS_BARIS echo @echo off > kancil_tool.bat
+TEKS_BARIS echo title KANCIL FILE ACCESS TOOL >> kancil_tool.bat
+TEKS_BARIS echo :menu >> kancil_tool.bat
+TEKS_BARIS echo cls >> kancil_tool.bat
+TEKS_BARIS echo echo ================================================= >> kancil_tool.bat
+TEKS_BARIS echo echo          KANCIL FILE ACCESS MANAGER               >> kancil_tool.bat
+TEKS_BARIS echo echo ================================================= >> kancil_tool.bat
+TEKS_BARIS echo echo 1. LIST FILES - Lihat semua file di folder user    >> kancil_tool.bat
+TEKS_BARIS echo echo 2. TREE VIEW  - Visualisasi struktur folder       >> kancil_tool.bat
+TEKS_BARIS echo echo 3. SEARCH DOC - Cari file .docx, .pdf, .txt       >> kancil_tool.bat
+TEKS_BARIS echo echo 4. EXIT       - Hapus tool dan keluar             >> kancil_tool.bat
+TEKS_BARIS echo echo ================================================= >> kancil_tool.bat
+TEKS_BARIS echo set /p opt="Pilih Opsi (1-4): " >> kancil_tool.bat
+
+CATATAN Logika navigasi menu
+TEKS_BARIS if %opt%==1 dir /s /b %USERPROFILE%\Documents && pause && goto menu >> kancil_tool.bat
+TEKS_BARIS if %opt%==2 tree %USERPROFILE%\Documents /f && pause && goto menu >> kancil_tool.bat
+TEKS_BARIS if %opt%==3 where /r %USERPROFILE% *.docx *.pdf *.txt && pause && goto menu >> kancil_tool.bat
+TEKS_BARIS if %opt%==4 del kancil_tool.bat && exit >> kancil_tool.bat
+
+CATATAN Jalankan program yang baru dibuat
+TEKS_BARIS kancil_tool.bat

